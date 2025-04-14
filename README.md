@@ -1,5 +1,5 @@
 # TargetShooter
-CPT_S 122 group assignment PA3. A shooting range style game built with SFML.
+CPT_S 122 group assignment PA9. A shooting range style game built with SFML.
 
 Group members:
 
