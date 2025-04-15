@@ -136,10 +136,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainMenu.cpp" />
+    <ClCompile Include="miscFunctions.cpp" />
+    <ClCompile Include="Target.cpp" />
+    <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="mainMenu.hpp" />
+    <ClInclude Include="miscFunctions.hpp" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="Target.hpp" />
+    <ClInclude Include="Timer.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
