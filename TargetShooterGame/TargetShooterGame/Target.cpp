@@ -26,3 +26,8 @@ sf::Texture& Target::getTexture()
 {
     return this->texture;
 }
+
+void Target::update()
+{
+    //still somewhat confused what we do here
+}

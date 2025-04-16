@@ -1,6 +1,7 @@
 #ifndef FUNCT
 #define FUNCT
 
+#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include "SFML/Graphics.hpp"
 #include <string>

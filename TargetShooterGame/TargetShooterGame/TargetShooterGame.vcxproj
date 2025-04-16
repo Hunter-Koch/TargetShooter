@@ -135,6 +135,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="gameDirector.cpp" />
+    <ClCompile Include="healthyTarget.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainMenu.cpp" />
     <ClCompile Include="miscFunctions.cpp" />
@@ -142,6 +144,9 @@
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="gameDirector.hpp" />
+    <ClInclude Include="GameObject.hpp" />
+    <ClInclude Include="healthyTarget.hpp" />
     <ClInclude Include="mainMenu.hpp" />
     <ClInclude Include="miscFunctions.hpp" />
     <ClInclude Include="Player.hpp" />

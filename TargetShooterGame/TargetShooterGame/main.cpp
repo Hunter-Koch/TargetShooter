@@ -2,16 +2,17 @@
 #include "Target.hpp"
 #include "miscFunctions.hpp"
 #include "Timer.hpp"
+#include "healthyTarget.hpp"
 
 int main()
 {
     //this is a test comment. delete me later
-    sf::RenderWindow window(sf::VideoMode({ 1280, 720 }), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode({ 1280, 720 }), "Target Shooter");
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
-    Target t(sf::Vector2f(randRange(0, 1000), randRange(0, 500)), sf::Color::Cyan);//constructing a vector, can construct variables just to be used as a parameter
-
+    HealthyTarget t;//constructing a vector, can construct variables just to be used as a parameter
+    t.setPosition(sf::Vector2f(randRange(0, 1000), randRange(0, 500)));
     Timer time;
 
     while (window.isOpen())
@@ -34,20 +35,33 @@ int main()
                 // hit test
                 if (bounds.contains(mouse))
                 {
-                    t.setPosition(sf::Vector2f(randRange(0, 1000), randRange(0, 500)));
-                    if (t.getRadius() == 5)
+                    if (t.isDestroyed())
                     {
-                        t.setRadius(100);
-                        time.stop();
+                        t.setHealth(2);
+                        t.setPosition(sf::Vector2f(randRange(0, 1000), randRange(0, 500)));
+                        if (t.getRadius() == 5)
+                        {
+                            t.setRadius(100);
+                            time.stop();
+                        }
+                        else
+                        {    
+                            if (t.getRadius() == 100)
+                            {
+                                time.restart();
+                            }
+                            t.setRadius(t.getRadius() - 5);
+                            t.playDestroyEffect();
+                        }
                     }
-                    else                        
-                    {    
-                        t.setRadius(t.getRadius() - 5);
-                        t.playDestroyEffect();
+                    else
+                    {
+                        t.deincrementHealth();
                     }
                 }
             }
         }
+       
 
         window.clear();
         window.draw(t);
@@ -56,3 +70,4 @@ int main()
         window.display();
     }
 }
+//high: 9.15172
