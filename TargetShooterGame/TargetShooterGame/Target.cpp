@@ -22,6 +22,28 @@ void Target::playAppearEffect(void)
     sound.play();
 }
 
+bool Target::getIsDestroyed(void)
+{
+    return this->isDestroyed;
+}
+
+void Target::setIsDestryed(bool newbool)
+{
+    this->isDestroyed = newbool;
+}
+
+void Target::destroy(void)
+{
+    this->setPosition(sf::Vector2f(0, 1000));
+    this->playDestroyEffect();
+}
+
+void Target::appear(void)
+{
+    this->setPosition(sf::Vector2f(randRange(0, 1000), randRange(0, 500)));
+    this->playAppearEffect();
+}
+
 sf::Texture& Target::getTexture()
 {
     return this->texture;

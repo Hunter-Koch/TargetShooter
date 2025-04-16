@@ -2,15 +2,21 @@
 #define DIRECT
 
 #include "healthyTarget.hpp"
+#include "Timer.hpp"
 
 class GameDirector
 {
 public:
 	GameDirector();
 
+	void checkSpawns(Timer& timer);
+	void checkClick(sf::RenderWindow& thisWindow, sf::Vector2f& mouse);
+	void renderTargets(sf::RenderWindow& thisWindow);
+
+
 private:
-
-
+	Target Tarray[15];
+	float timeAtNextSpawn;
 
 
 	//plan:

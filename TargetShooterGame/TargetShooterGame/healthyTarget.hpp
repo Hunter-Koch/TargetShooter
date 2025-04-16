@@ -1,3 +1,6 @@
+#ifndef HEALTHY
+#define HEALTHY
+
 #include "Target.hpp"
 
 class HealthyTarget : public Target
@@ -17,3 +20,5 @@ public:
 private:
 	int health;
 };
+
+#endif
