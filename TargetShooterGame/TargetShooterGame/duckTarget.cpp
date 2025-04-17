@@ -1,0 +1,41 @@
+#include "duckTarget.hpp"
+
+void duckTarget::appear()
+{
+	this->setPosition(sf::Vector2f(0, y));
+	this->playAppearEffect();
+	this->setIsDestryed(false);
+	direction = 1;
+}
+
+void duckTarget::update()
+{
+	if (!this->getIsDestroyed())
+	{
+		sf::Vector2f position = this->getPosition();
+		position.x += speed * direction;
+
+		auto bounds = this->getGlobalBounds();
+		float width = bounds.size.x;
+
+		if (position.x <= 0)
+		{
+			position.x = 0;
+			direction = 1;
+		}
+		else if (position.x + width >= 1280)
+		{
+			position.x = 1280 - width;
+			direction = -1;
+		}
+
+		this->setPosition(position);
+	}
+}
+
+void duckTarget::destroy()
+{
+	this->setPosition(sf::Vector2f(0, 1000));
+	this->playDestroyEffect();
+	this->setIsDestryed(true);
+}
