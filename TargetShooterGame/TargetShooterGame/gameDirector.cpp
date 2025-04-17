@@ -9,14 +9,21 @@ GameDirector::GameDirector()
 
 void GameDirector::checkSpawns(Timer& timer)
 {
-	if (timer.getElapsedTime().asSeconds() >= this->timeAtNextSpawn)
-	{
-		int i = randRange(0, 14);
+	int i = 0;
 
-		this->Tarray[i].setIsDestryed(false);
+	if (timer.getElapsedTime().asSeconds() >= this->timeAtNextSpawn && this->isAllTargetsSpawned() == false)
+	{
+		//find random target in array to spawn
+		do
+		{
+			i = randRange(1, 14);
+		}while(this->Tarray[i].getIsDestroyed() == false);
+		
+		//make object appear, spawn object
 		this->Tarray[i].appear();
 
-		this->timeAtNextSpawn += randRange(1, 3);
+		//setting next time to spawn
+		this->timeAtNextSpawn += randRange(1, 2);
 	}
 }
 
@@ -25,18 +32,23 @@ void GameDirector::checkClick(sf::RenderWindow& thisWindow, sf::Vector2f& mouse)
 	sf::FloatRect bounds = this->Tarray[0].getGlobalBounds();
 		
     // hit test
-	for (int i = 0; !bounds.contains(mouse) && i < 15; i++)
+	for (int i = 1; !bounds.contains(mouse) && i < 15; i++)
     {
-		bounds = this->Tarray[i].getGlobalBounds();
-		if (bounds.contains(mouse))
+		if (!this->Tarray[i].getIsDestroyed())
 		{
-			this->Tarray[i].destroy();
+			bounds = this->Tarray[i].getGlobalBounds();
+
+			if (bounds.contains(mouse))
+			{
+				this->Tarray[i].destroy();
+			}
 		}
     }
 }
 
 void GameDirector::renderTargets(sf::RenderWindow& thisWindow)
 {
+	//goes through array, if target isn't destoryed, then render to screen
 	for (int i = 0; i < 15; i++)
 	{
 		if (!this->Tarray[i].getIsDestroyed())
@@ -45,3 +57,29 @@ void GameDirector::renderTargets(sf::RenderWindow& thisWindow)
 		}
 	}
 }
+
+bool GameDirector::isAllTargetsDestroyed(void)
+{
+	for (int i = 0; i < 15; i++)
+	{
+		if (this->Tarray[i].getIsDestroyed() == false)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+bool GameDirector::isAllTargetsSpawned(void)
+{
+	for (int i = 1; i < 15; i++)//do i = 0 when figure out why 0 cant work
+	{
+		if (this->Tarray[i].getIsDestroyed() == true)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+//to do: figure out why index 0 cant be destroyed

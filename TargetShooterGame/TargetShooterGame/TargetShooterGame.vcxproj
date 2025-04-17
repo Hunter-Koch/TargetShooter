@@ -140,6 +140,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainMenu.cpp" />
     <ClCompile Include="miscFunctions.cpp" />
+    <ClCompile Include="Stats.cpp" />
     <ClCompile Include="Target.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
@@ -150,6 +151,7 @@
     <ClInclude Include="mainMenu.hpp" />
     <ClInclude Include="miscFunctions.hpp" />
     <ClInclude Include="Player.hpp" />
+    <ClInclude Include="Stats.hpp" />
     <ClInclude Include="Target.hpp" />
     <ClInclude Include="Timer.hpp" />
   </ItemGroup>

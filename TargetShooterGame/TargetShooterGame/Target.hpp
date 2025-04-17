@@ -46,13 +46,14 @@ public:
 	bool getIsDestroyed(void);
 	void setIsDestryed(bool newbool);
 
+	//virutal function that should be overrided in target variants for use in gameDirector.hpp
 	virtual void destroy(void);
+
+	//virutal function that should be overrided in target variants for use in gameDirector.hpp
 	virtual void appear(void);
 
 	sf::Texture& getTexture();
-
 	void update();
-
 
 private:
 	bool isDestroyed;

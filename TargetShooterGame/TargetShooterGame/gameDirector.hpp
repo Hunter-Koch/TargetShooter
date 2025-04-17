@@ -12,7 +12,8 @@ public:
 	void checkSpawns(Timer& timer);
 	void checkClick(sf::RenderWindow& thisWindow, sf::Vector2f& mouse);
 	void renderTargets(sf::RenderWindow& thisWindow);
-
+	bool isAllTargetsDestroyed(void);
+	bool isAllTargetsSpawned(void);
 
 private:
 	Target Tarray[15];

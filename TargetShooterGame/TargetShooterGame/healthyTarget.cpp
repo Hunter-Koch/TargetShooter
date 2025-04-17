@@ -20,7 +20,23 @@ void HealthyTarget::setHealth(int newHealth)
 	this->health = newHealth;
 }
 
-bool HealthyTarget::isDestroyed()
+void HealthyTarget::destroy()
 {
-	return this->health <= 1;//could also be "<= 0" depending on whether 1 or 0 is the first value 
+	if (this->health >= 1)
+	{
+		this->health--;
+	}
+	else
+	{
+		this->setPosition(sf::Vector2f(0, 1000));
+		this->playDestroyEffect();
+		this->setIsDestryed(true);
+	}
+}
+
+void HealthyTarget::appear()
+{
+	this->setPosition(sf::Vector2f(randRange(0, 1000), randRange(0, 500)));
+	this->playAppearEffect();
+	this->setIsDestryed(false);
 }

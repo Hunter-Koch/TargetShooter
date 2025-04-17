@@ -36,6 +36,9 @@
     <ClCompile Include="gameDirector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Stats.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Target.hpp">
@@ -60,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="gameDirector.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Stats.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

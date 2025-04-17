@@ -15,7 +15,10 @@ public:
 	void deincrementHealth();
 	int getHealth();
 	void setHealth(int newHealth);
-	bool isDestroyed();
+
+	//overloaded functions
+	void destroy();
+	void appear();
 
 private:
 	int health;

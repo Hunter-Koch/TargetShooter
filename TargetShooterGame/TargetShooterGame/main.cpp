@@ -18,7 +18,7 @@ int main()
 
     while (window.isOpen())
     {
-        director.checkSpawns(time);
+       director.checkSpawns(time);
 
         while (const std::optional event = window.pollEvent())
         {
