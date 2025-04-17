@@ -4,7 +4,7 @@
 #include "Timer.hpp"
 #include "healthyTarget.hpp"
 #include "gameDirector.hpp"
-
+#include "Player.hpp"
 
 
 int main()
@@ -16,10 +16,9 @@ int main()
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
+    Player p;
     Timer time;
     GameDirector director;
-
-   
 
     while (window.isOpen())
     {
@@ -36,15 +35,14 @@ int main()
             {
                 sf::Vector2f mouse = window.mapPixelToCoords(sf::Mouse::getPosition(window));
 
-                director.checkClick(window, mouse);
+                director.checkClick(window, mouse, p);
             }
         }
 
         window.clear();
         director.renderTargets(window);
         time.setTextStringFromFloat(time.getElapsedTime().asSeconds());
-        window.draw(time.getText());
+        window.draw(p.getpCurrentTime(time.getElapsedTime().asSeconds()));
         window.display();
     }
 }
-//high: 9.15172

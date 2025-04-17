@@ -5,6 +5,7 @@
 #include "Timer.hpp"
 #include "duckTarget.hpp"
 #include "floatingTarget.hpp"
+#include "Player.hpp"
 
 class GameDirector
 {
@@ -12,7 +13,7 @@ public:
 	GameDirector();
 
 	void checkSpawns(Timer& timer);
-	void checkClick(sf::RenderWindow& thisWindow, sf::Vector2f& mouse);
+	void checkClick(sf::RenderWindow& thisWindow, sf::Vector2f& mouse, Player& p);
 	void renderTargets(sf::RenderWindow& thisWindow);
 	void runTargetUpdates(void);
 

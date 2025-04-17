@@ -6,7 +6,11 @@
 class floatingTarget :public Target
 {
 public:
-	floatingTarget() : Target() {}
+	floatingTarget() : Target()
+    {
+        this->setScoreAwarded(4);
+        this->setTimeAlive(7);
+    }
 
     // overloaded functions
     void destroy() override;

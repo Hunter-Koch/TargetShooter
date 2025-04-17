@@ -28,7 +28,7 @@ void GameDirector::checkSpawns(Timer& timer)
 	}
 }
 
-void GameDirector::checkClick(sf::RenderWindow& thisWindow, sf::Vector2f& mouse)
+void GameDirector::checkClick(sf::RenderWindow& thisWindow, sf::Vector2f& mouse, Player& p)
 {
 	sf::FloatRect bounds = this->Tarray[0]->getGlobalBounds();
 		
@@ -42,6 +42,7 @@ void GameDirector::checkClick(sf::RenderWindow& thisWindow, sf::Vector2f& mouse)
 			if (bounds.contains(mouse))
 			{
 				this->Tarray[i]->destroy();
+				p.AddToTime(Tarray[i]->getScoreAwarded());
 			}
 		}
     }

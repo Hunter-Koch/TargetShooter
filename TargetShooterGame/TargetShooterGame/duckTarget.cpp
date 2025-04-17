@@ -2,6 +2,7 @@
 
 void duckTarget::appear()
 {
+	this->restartTimer();
 	this->setPosition(sf::Vector2f(0, randRange(0, 550)));
 	this->playAppearEffect();
 	this->setIsDestryed(false);
@@ -32,11 +33,17 @@ void duckTarget::update()
 		}
 
 		this->setPosition(position);
+
+		if (this->getTimeAlive() <= this->getTargetTimerInSeconds())
+		{
+			this->destroy();
+		}
 	}
 }
 
 void duckTarget::destroy()
 {
+	this->stopTimer();
 	this->setPosition(sf::Vector2f(0, 1000));
 	this->playDestroyEffect();
 	this->setIsDestryed(true);
