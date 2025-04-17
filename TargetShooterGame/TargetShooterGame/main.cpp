@@ -5,6 +5,8 @@
 #include "healthyTarget.hpp"
 #include "gameDirector.hpp"
 
+
+
 int main()
 {
     srand(time(NULL));
@@ -15,6 +17,8 @@ int main()
 
     Timer time;
     GameDirector director;
+
+   
 
     while (window.isOpen())
     {
