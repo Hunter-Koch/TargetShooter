@@ -10,6 +10,7 @@
 int main()
 {
     srand(time(NULL));
+
     //this is a test comment. delete me later
     sf::RenderWindow window(sf::VideoMode({ 1280, 720 }), "Target Shooter");
     sf::CircleShape shape(100.f);
@@ -23,6 +24,7 @@ int main()
     while (window.isOpen())
     {
        director.checkSpawns(time);
+       director.runTargetUpdates();
 
         while (const std::optional event = window.pollEvent())
         {

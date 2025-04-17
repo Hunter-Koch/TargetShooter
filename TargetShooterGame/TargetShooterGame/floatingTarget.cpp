@@ -3,7 +3,7 @@
 void floatingTarget::appear()
 {
     x = 0;
-    baseY = randRange(200, 400); // Spawn height varies ?
+    baseY = randRange(50, 500); // Spawn height varies ?
     this->setPosition(sf::Vector2f(x, baseY));
     this->setIsDestryed(false);
     this->playAppearEffect();
@@ -27,7 +27,7 @@ void floatingTarget::update() // ? needs to be called somewhere when it appears
 
 void floatingTarget::destroy()
 {
-		this->setPosition(sf::Vector2f(0, 1000));
-		this->playDestroyEffect();
-		this->setIsDestryed(true);
+	this->setPosition(sf::Vector2f(0, 1000));
+	this->playDestroyEffect();
+	this->setIsDestryed(true);
 }

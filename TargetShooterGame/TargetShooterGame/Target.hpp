@@ -53,7 +53,8 @@ public:
 	virtual void appear(void);
 
 	sf::Texture& getTexture();
-	void update();
+
+	virtual void update();
 
 private:
 	bool isDestroyed;

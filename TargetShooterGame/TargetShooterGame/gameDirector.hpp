@@ -3,6 +3,8 @@
 
 #include "healthyTarget.hpp"
 #include "Timer.hpp"
+#include "duckTarget.hpp"
+#include "floatingTarget.hpp"
 
 class GameDirector
 {
@@ -12,11 +14,15 @@ public:
 	void checkSpawns(Timer& timer);
 	void checkClick(sf::RenderWindow& thisWindow, sf::Vector2f& mouse);
 	void renderTargets(sf::RenderWindow& thisWindow);
+	void runTargetUpdates(void);
+
 	bool isAllTargetsDestroyed(void);
 	bool isAllTargetsSpawned(void);
 
+	void setTarray(void);
+
 private:
-	Target Tarray[15];
+	Target* Tarray[15];
 	float timeAtNextSpawn;
 
 
