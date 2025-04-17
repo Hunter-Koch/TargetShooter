@@ -135,6 +135,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BasicTarget.cpp" />
     <ClCompile Include="duckTarget.cpp" />
     <ClCompile Include="floatingTarget.cpp" />
     <ClCompile Include="floatingTarget.hpp" />
@@ -148,6 +149,8 @@
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BasicTarget.hpp" />
+    <ClInclude Include="Debug.hpp" />
     <ClInclude Include="duckTarget.hpp" />
     <ClInclude Include="gameDirector.hpp" />
     <ClInclude Include="GameObject.hpp" />

@@ -58,6 +58,24 @@ void GameDirector::renderTargets(sf::RenderWindow& thisWindow)
 	}
 }
 
+void GameDirector::renderCrosshair(sf::RenderWindow& thisWindow)
+{
+	//sf::Cursor cur(sf::Cursor::Type::Wait);
+	//thisWindow.setMouseCursor(cur);
+
+
+	sf::Texture crosshairTexture;
+	crosshairTexture.loadFromFile("Assets/Crosshair/Crosshair_64x64.png", true);
+	sf::Sprite crosshair(crosshairTexture);
+
+
+	sf::Vector2i mouse = sf::Mouse::getPosition(thisWindow);
+
+	crosshair.setPosition(sf::Vector2f(mouse.x -32, mouse.y -32));
+	thisWindow.setMouseCursorVisible(false);
+	thisWindow.draw(crosshair);
+}
+
 bool GameDirector::isAllTargetsDestroyed(void)
 {
 	for (int i = 0; i < 15; i++)

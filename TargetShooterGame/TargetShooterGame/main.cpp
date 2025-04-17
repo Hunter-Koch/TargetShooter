@@ -12,6 +12,8 @@ int main()
     srand(time(NULL));
     //this is a test comment. delete me later
     sf::RenderWindow window(sf::VideoMode({ 1280, 720 }), "Target Shooter");
+    
+    
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
@@ -40,6 +42,7 @@ int main()
 
         window.clear();
         director.renderTargets(window);
+        director.renderCrosshair(window);
         time.setTextStringFromFloat(time.getElapsedTime().asSeconds());
         window.draw(time.getText());
         window.display();
