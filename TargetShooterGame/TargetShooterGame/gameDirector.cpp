@@ -102,8 +102,8 @@ void GameDirector::setTarray(void)
 	this->Tarray[1] = new floatingTarget;
 	this->Tarray[2] = new floatingTarget;
 	this->Tarray[3] = new floatingTarget;
-	this->Tarray[4] = new duckTarget;
-	this->Tarray[5] = new duckTarget;
+	this->Tarray[4] = new negativeTarget;
+	this->Tarray[5] = new negativeTarget;
 	this->Tarray[6] = new duckTarget;
 	this->Tarray[7] = new duckTarget;
 	this->Tarray[8] = new duckTarget;
