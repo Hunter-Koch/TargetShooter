@@ -144,6 +144,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainMenu.cpp" />
     <ClCompile Include="miscFunctions.cpp" />
+    <ClCompile Include="negativeTarget.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Stats.cpp" />
     <ClCompile Include="Target.cpp" />
     <ClCompile Include="Timer.cpp" />
@@ -157,6 +159,7 @@
     <ClInclude Include="healthyTarget.hpp" />
     <ClInclude Include="mainMenu.hpp" />
     <ClInclude Include="miscFunctions.hpp" />
+    <ClInclude Include="negativeTarget.hpp" />
     <ClInclude Include="Player.hpp" />
     <ClInclude Include="Stats.hpp" />
     <ClInclude Include="Target.hpp" />

@@ -1,3 +1,6 @@
+#ifndef  STATS
+#define STATS
+
 #include "Target.hpp"
 
 
@@ -32,3 +35,5 @@ private:
 	float accuracy;
 	int totalPoints;
 };
+
+#endif

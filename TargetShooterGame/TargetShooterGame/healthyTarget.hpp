@@ -17,9 +17,10 @@ public:
 	void setHealth(int newHealth);
 
 	//overloaded functions
-	void destroy();
-	void appear();
+	void destroy() override;
+	void appear() override;
 
+	
 private:
 	int health;
 };

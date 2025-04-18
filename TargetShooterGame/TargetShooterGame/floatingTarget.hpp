@@ -6,23 +6,24 @@
 class floatingTarget :public Target
 {
 public:
-	floatingTarget() : Target() {}
+	floatingTarget() : Target()
+    {
+        this->setScoreAwarded(4);
+        this->setTimeAlive(7);
+    }
 
     // overloaded functions
-    void destroy();
-    void appear();
+    void destroy() override;
+    void appear() override;
 
     void update() override;
 
 private:
-    
     float x = 0;
-    float speed = 0.2f; // Adjust for how fast it moves
-    float amplitude = 200.f; // Curve height
+    float speed = 0.1f; // Adjust for how fast it moves
+    float amplitude = 100.0f; // Curve height
     float frequency = 0.007f; // Curve tightness
-    float baseY = 300.f;
-  
-
+    float baseY = 300.0f;
 };
 
 #endif

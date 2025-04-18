@@ -4,6 +4,7 @@
 #include "SFML/Graphics.hpp"
 #include "SFML/Audio.hpp"
 #include "GameObject.hpp"
+#include "Timer.hpp"
 
 
 //all objects have to be transformable and drawable to be rendered
@@ -13,13 +14,15 @@ public:
 	Target() : sound(destroyEffect), sf::CircleShape(100)
 	{
 		this->setPosition(sf::Vector2f(0,1000));
-		this->mScoreAwarded = 100;
+		this->mScoreAwarded = 3;
 		this->destroyEffect.loadFromFile("Assets\\sounds\\destroy.mp3");
 		this->appearEffect.loadFromFile("Assets\\sounds\\appear.mp3");
 		this->texture.loadFromFile("Assets\\targets\\Basic\\Target 64x64.png");
 		this->setTexture(&texture, true);
 		this->sound.setVolume(50);//ranges from 0-100
 		this->isDestroyed = true;
+		this->timeAlive = 3;
+		this->targetTimer.stop();
 	}
 
 	Target(sf::Vector2f pos, const sf::Color& color) :
@@ -35,16 +38,24 @@ public:
 		this->appearEffect.loadFromFile("Assets\\sounds\\appear.mp3");
 
 		this->sound.setVolume(50);//ranges from 0-100
-		mScoreAwarded = 100;
+		mScoreAwarded = 3;
 		this->isDestroyed = true;
+		this->timeAlive = 3;
+		this->targetTimer.stop();
 	}
 
 	int getScoreAwarded(void);
-	void setScoreAwarded(int& newScore);
+	void setScoreAwarded(int newScore);
 	void playDestroyEffect(void);
 	void playAppearEffect(void);
 	bool getIsDestroyed(void);
 	void setIsDestryed(bool newbool);
+	int getTimeAlive(void);
+	void setTimeAlive(int newTimeAlive);
+
+	void restartTimer(void);
+	void stopTimer(void);
+	float getTargetTimerInSeconds(void);
 
 	//virutal function that should be overrided in target variants for use in gameDirector.hpp
 	virtual void destroy(void);
@@ -53,7 +64,8 @@ public:
 	virtual void appear(void);
 
 	sf::Texture& getTexture();
-	void update();
+
+	virtual void update();
 
 private:
 	bool isDestroyed;
@@ -62,6 +74,8 @@ private:
 	sf::SoundBuffer destroyEffect;
 	sf::SoundBuffer appearEffect;
 	sf::Sound sound;
+	int timeAlive;
+	Timer targetTimer;
 };
 
 

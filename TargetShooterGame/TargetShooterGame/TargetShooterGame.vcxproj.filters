@@ -48,7 +48,11 @@
     <ClCompile Include="floatingTarget.hpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="BasicTarget.cpp">
+=======
+    <ClCompile Include="Player.cpp">
+>>>>>>> 202c0cf079bd5c7f53cccf8c6adfce3eafd011b3
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,11 +87,14 @@
     <ClInclude Include="duckTarget.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Debug.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BasicTarget.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+=======
+>>>>>>> 202c0cf079bd5c7f53cccf8c6adfce3eafd011b3
   </ItemGroup>
 </Project>

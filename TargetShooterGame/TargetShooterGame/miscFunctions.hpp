@@ -14,6 +14,7 @@
 using std::cout;
 using std::endl;
 using std::ostream;
+using sf::Text;
 
 int randRange(int min, int max);
 
