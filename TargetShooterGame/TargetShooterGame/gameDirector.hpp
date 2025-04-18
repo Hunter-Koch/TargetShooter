@@ -5,6 +5,7 @@
 #include "Timer.hpp"
 #include "duckTarget.hpp"
 #include "floatingTarget.hpp"
+#include "negativeTarget.hpp"
 #include "Player.hpp"
 
 class GameDirector
