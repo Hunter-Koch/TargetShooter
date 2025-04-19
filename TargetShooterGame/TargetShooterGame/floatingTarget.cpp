@@ -10,6 +10,7 @@ void floatingTarget::appear()
     this->playAppearEffect();
 }
 
+
 void floatingTarget::update() // ? needs to be called somewhere when it appears
 {
     if (!this->getIsDestroyed())
@@ -17,7 +18,7 @@ void floatingTarget::update() // ? needs to be called somewhere when it appears
         x += speed;
         float y = baseY + amplitude * std::sin(frequency * x);
         this->setPosition(sf::Vector2f(x, y));
-
+        
         // Check if it's off screen
         if (this->getPosition().x > 1280) 
         {
