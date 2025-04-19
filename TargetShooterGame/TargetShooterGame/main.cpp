@@ -22,6 +22,12 @@ int main()
     Timer time;
     GameDirector director;
 
+    //texture and sprite for static background
+    sf::Texture backgroundTexture("Assets\\background\\Background_sprite.png");
+    sf::Sprite staticBackground(backgroundTexture);
+    staticBackground.setScale(sf::Vector2f(4, 4));
+
+
     while (window.isOpen())
     {
        director.checkSpawns(time);
@@ -42,8 +48,10 @@ int main()
         }
 
         window.clear();
+        window.draw(staticBackground);
         director.renderTargets(window);
         director.renderCrosshair(window);
+      
         time.setTextStringFromFloat(time.getElapsedTime().asSeconds());
         window.draw(p.getpCurrentTime(time.getElapsedTime().asSeconds()));
         window.display();

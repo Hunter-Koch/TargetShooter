@@ -24,6 +24,7 @@ void floatingTarget::appear()
     this->playAppearEffect();
 }
 
+
 void floatingTarget::update() // ? needs to be called somewhere when it appears
 {
     if (!this->getIsDestroyed())

@@ -14,6 +14,8 @@ public:
         this->setTimeAlive(7);
     }
 
+    
+    
     // overloaded functions
     void destroy() override;
     void appear() override;
