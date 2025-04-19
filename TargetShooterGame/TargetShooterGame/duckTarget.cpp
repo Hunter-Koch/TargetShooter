@@ -3,10 +3,20 @@
 void duckTarget::appear()
 {
 	this->restartTimer();
-	this->setPosition(sf::Vector2f(0, randRange(0, 550)));
+	// spawn from left side or right side
+	if (rand() % 2 == 0)
+	{
+		direction = 1;
+		this->setPosition(sf::Vector2f(0, randRange(100, 600)));
+	}
+	else
+	{
+		direction = -1;
+		this->setPosition(sf::Vector2f(1280, randRange(100, 600)));
+	}
 	this->playAppearEffect();
 	this->setIsDestryed(false);
-	direction = 1;
+	
 }
 
 void duckTarget::update()

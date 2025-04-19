@@ -1,100 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
+    <ClCompile Include="BasicTarget.cpp" />
+    <ClCompile Include="duckTarget.cpp" />
+    <ClCompile Include="floatingTarget.cpp" />
+    <ClCompile Include="floatingTarget.hpp" />
+    <ClCompile Include="gameDirector.cpp" />
+    <ClCompile Include="healthyTarget.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainMenu.cpp" />
+    <ClCompile Include="miscFunctions.cpp" />
+    <ClCompile Include="negativeTarget.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Stats.cpp" />
+    <ClCompile Include="Target.cpp" />
+    <ClCompile Include="Timer.cpp" />
+    <ClCompile Include="fastTarget.cpp" />
+    <ClCompile Include="smallTarget.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Target.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="miscFunctions.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Timer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="mainMenu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="healthyTarget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="gameDirector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Stats.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="duckTarget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="floatingTarget.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="floatingTarget.hpp">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="BasicTarget.cpp">
-=======
-    <ClCompile Include="Player.cpp">
->>>>>>> 202c0cf079bd5c7f53cccf8c6adfce3eafd011b3
-      <Filter>Source Files</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Target.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="miscFunctions.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Timer.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="mainMenu.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GameObject.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="healthyTarget.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="gameDirector.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Stats.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="duckTarget.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="Debug.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BasicTarget.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-=======
->>>>>>> 202c0cf079bd5c7f53cccf8c6adfce3eafd011b3
+    <ClInclude Include="BasicTarget.hpp" />
+    <ClInclude Include="Debug.hpp" />
+    <ClInclude Include="duckTarget.hpp" />
+    <ClInclude Include="gameDirector.hpp" />
+    <ClInclude Include="GameObject.hpp" />
+    <ClInclude Include="healthyTarget.hpp" />
+    <ClInclude Include="mainMenu.hpp" />
+    <ClInclude Include="miscFunctions.hpp" />
+    <ClInclude Include="negativeTarget.hpp" />
+    <ClInclude Include="Player.hpp" />
+    <ClInclude Include="Stats.hpp" />
+    <ClInclude Include="Target.hpp" />
+    <ClInclude Include="Timer.hpp" />
+    <ClInclude Include="fastTarget.hpp" />
+    <ClInclude Include="smallTarget.hpp" />
   </ItemGroup>
 </Project>
