@@ -8,6 +8,8 @@ class floatingTarget :public Target
 public:
 	floatingTarget() : Target()
     {
+        this->getTexture().loadFromFile("Assets\\targets\\BalloonTarget.png");
+        this->setTexture(&getTexture(), true);
         this->setScoreAwarded(4);
         this->setTimeAlive(7);
     }

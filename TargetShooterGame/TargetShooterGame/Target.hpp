@@ -32,7 +32,7 @@ public:
 		//this->setFillColor(color); //changes color of texture
 		this->setPosition(pos);
 
-		this->texture.loadFromFile("Assets\\targets\\Basic\\Target 64x64.png");
+		this->texture.loadFromFile("Assets\\targets\\Target_64x64.png");
 		this->setTexture(&texture, true);
 
 		this->destroyEffect.loadFromFile("Assets\\sounds\\destroy.mp3");
