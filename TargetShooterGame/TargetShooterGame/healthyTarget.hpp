@@ -8,6 +8,8 @@ class HealthyTarget : public Target
 public:
 	HealthyTarget() : Target()
 	{
+		this->getTexture().loadFromFile("Assets\\targets\\HealthyTarget.png");
+		this->setTexture(&getTexture(), true);
 		this->health = 2;
 	};
 	HealthyTarget(int newHealth);
