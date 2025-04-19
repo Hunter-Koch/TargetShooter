@@ -19,7 +19,6 @@ public:
 		this->appearEffect.loadFromFile("Assets\\sounds\\appear.mp3");
 		this->texture.loadFromFile("Assets\\targets\\Target_64x64.png");
 		this->warningEffect.loadFromFile("Assets\\sounds\\warning.mp3");
-		this->texture.loadFromFile("Assets\\targets\\Basic\\Target 64x64.png");
 		this->setTexture(&texture, true);
 		this->sound.setVolume(50);//ranges from 0-100
 		this->isDestroyed = true;
