@@ -20,19 +20,33 @@ void fastTarget::appear()
 
 	
 	this->restartTimer();
-	
-	// spawn from left side or right side
-	if (rand() % 2 == 0)
+
+	direction = rand() % 4;
+
+	sf::Vector2f pos;
+
+	switch (direction)
 	{
-		direction = 1; 
-		this->setPosition(sf::Vector2f(0, randRange(100, 600)));
+	case 0: // Right
+		pos = sf::Vector2f(0, randRange(100, 600));
+		this->setTexture(&fastRight, true);
+		break;
+	case 1: // Left
+		pos = sf::Vector2f(1280, randRange(100, 600));
+		this->setTexture(&fastLeft, true);
+		break;
+	case 2: // Down
+		pos = sf::Vector2f(randRange(100, 1180), 0);
+		this->setTexture(&fastDown, true);
+		break;
+	case 3: // Up
+		pos = sf::Vector2f(randRange(100, 1180), 720);
+		this->setTexture(&fastUp, true);
+		break;
 	}
-	else
-	{
-		direction = -1; 
-		this->setPosition(sf::Vector2f(1280, randRange(100, 600)));
-	}
-	this->playAppearEffect(); // change later so different effect plays before it appears to warn
+
+	this->setPosition(pos);
+	this->playAppearEffect();
 	this->setIsDestryed(false);
 }
 
@@ -46,21 +60,26 @@ void fastTarget::destroy()
 
 void fastTarget::update()
 {
-
 	if (!this->getIsDestroyed())
 	{
 		sf::Vector2f pos = this->getPosition();
-		pos.x += speed * direction;
+
+		switch (direction)
+		{
+		case 0: pos.x += speed; break; // right
+		case 1: pos.x -= speed; break; // left
+		case 2: pos.y += speed; break; // down
+		case 3: pos.y -= speed; break; // up
+		}
+
 		this->setPosition(pos);
 
-		if ((direction == 1 && pos.x > 1280) || (direction == -1 && pos.x < 0))
+		// Off-screen destruction
+		if (pos.x < 0 || pos.x > 1280 || pos.y < 0 || pos.y > 720)
 		{
 			this->destroy();
 		}
 
-		if (this->getTimeAlive() <= this->getTargetTimerInSeconds())
-		{
-			this->destroy();
-		}
+
 	}
 }

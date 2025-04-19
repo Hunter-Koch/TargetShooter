@@ -12,7 +12,17 @@ public:
 	{
 		this->setTimeAlive(7);
 		this->setScoreAwarded(3);
+
+		fastRight.loadFromFile("Assets\\targets\\FastTargetRight.png");
+		fastLeft.loadFromFile("Assets\\targets\\FastTargetLeft.png");
+		fastUp.loadFromFile("Assets\\targets\\FastTargetUp.png");
+		fastDown.loadFromFile("Assets\\targets\\FastTargetDown.png");
 	}
+
+	sf::Texture fastRight;
+	sf::Texture fastLeft;
+	sf::Texture fastUp;
+	sf::Texture fastDown;
 
 	void appear() override;
 	void destroy() override;
@@ -23,7 +33,9 @@ public:
 
 private:
 	int direction = 1;
+//	int directionY = 1;
 	float speed = 1.0f;
+//	float verticalSpeed = 0.5f;
 
 	bool waiting = false;
 	bool soundPlayed = false;
