@@ -17,7 +17,7 @@ public:
 	void deincrementHealth();
 	int getHealth();
 	void setHealth(int newHealth);
-
+	
 	//overloaded functions
 	void destroy() override;
 	void appear() override;
