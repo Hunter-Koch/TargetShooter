@@ -18,7 +18,6 @@ void fastTarget::appear()
 	//soundPlayed = false;
 	//preAppear.restart();
 
-	
 	this->restartTimer();
 
 	direction = rand() % 4;

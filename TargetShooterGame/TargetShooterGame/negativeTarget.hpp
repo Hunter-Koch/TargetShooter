@@ -10,8 +10,8 @@ public:
 	{
 		this->getTexture().loadFromFile("Assets\\targets\\NegativeTarget.png");
 		this->setTexture(&getTexture(), true);
-		this->setTimeAlive(7);
-		this->setScoreAwarded(-3);
+		this->setTimeAlive(4);
+		this->setScoreAwarded(-5);
 
 	}
 

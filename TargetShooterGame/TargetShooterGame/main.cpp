@@ -5,6 +5,7 @@
 #include "healthyTarget.hpp"
 #include "gameDirector.hpp"
 #include "Player.hpp"
+#include "mainMenu.hpp"
 
 
 int main()
@@ -21,31 +22,66 @@ int main()
     Player p;
     Timer time;
     GameDirector director;
+    MainMenu mainMenu;
 
     while (window.isOpen())
     {
-       director.checkSpawns(time);
-       director.runTargetUpdates();
-
-        while (const std::optional event = window.pollEvent())
+        if (p.getTotalTime() - time.getElapsedTime().asSeconds() <= 0)
         {
-            if (event->is<sf::Event::Closed>())
-                window.close();
-
-
-            if (event->is < sf::Event::MouseButtonPressed>())
-            {
-                sf::Vector2f mouse = window.mapPixelToCoords(sf::Mouse::getPosition(window));
-
-                director.checkClick(window, mouse, p);
-            }
+            mainMenu.setinMenu(true);
         }
 
+        if(!mainMenu.getinMenu())
+        {
+            director.checkSpawns(time);
+            director.runTargetUpdates();
+        }
+
+       
+
+       while (const std::optional event = window.pollEvent())
+       {
+           if (event->is<sf::Event::Closed>())
+               window.close();
+
+
+           if (event->is < sf::Event::MouseButtonPressed>())
+           {
+               sf::Vector2f mouse = window.mapPixelToCoords(sf::Mouse::getPosition(window));
+
+               if (mainMenu.getinMenu())
+               {
+                   sf::FloatRect bounds = mainMenu.getButton().getGlobalBounds();
+                   if (bounds.contains(mouse))
+                   {
+                       mainMenu.setinMenu(false);
+                       time.restart();
+                       p.resetPlayerStats();
+                       director.reset();
+                       p.setTotalTime(10.0);
+                   }
+               }
+               else
+               {
+                    director.checkClick(window, mouse, p);
+               }
+           }
+       }
+
         window.clear();
-        director.renderTargets(window);
+       
+        if (mainMenu.getinMenu())
+        {
+            mainMenu.drawMenu(window);
+            window.draw(p.getStatsAsText());
+        }
+        else
+        {
+            director.renderTargets(window);
+            time.setTextStringFromFloat(time.getElapsedTime().asSeconds());
+            window.draw(p.getpCurrentTime(time.getElapsedTime().asSeconds()));
+        }
         director.renderCrosshair(window);
-        time.setTextStringFromFloat(time.getElapsedTime().asSeconds());
-        window.draw(p.getpCurrentTime(time.getElapsedTime().asSeconds()));
         window.display();
     }
 }

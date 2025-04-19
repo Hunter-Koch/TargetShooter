@@ -12,7 +12,7 @@ public:
 		this->setTexture(&getTexture(), true);
 		this->setRadius(60);
 		this->setTimeAlive(7);
-		this->setScoreAwarded(3);
+		this->setScoreAwarded(1);
 	}
 
 	void appear() override;

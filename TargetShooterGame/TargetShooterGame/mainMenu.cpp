@@ -3,6 +3,7 @@
 void MainMenu::drawMenu(sf::RenderWindow& win) const
 {
 	win.draw(this->title);
+	win.draw(this->subtitle);
 	win.draw(this->button);
 	win.draw(this->ButtonText);
 }

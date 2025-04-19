@@ -1,23 +1,18 @@
 #include "Stats.hpp"
 
-Stats::Stats()
+Stats::Stats() : text(this->font, "TEMP", 100)
 {
-	this->missedTargets = 0;
 	this->totalShots = 0;
 	this->missedShots = 0;
 	this->accuracy = 0.0;
 	this->totalPoints = 0;
 	this->hitTargets = 0;
-}
-
-void Stats::incrementMissedTargets()
-{
-	this->missedTargets++;
-}
-
-int Stats::getMissedTargets()
-{
-	return this->missedTargets;
+	updateText();
+	font.openFromFile("Assets\\fonts\\TTT-Regular.otf");//refers to directory path from project 
+	text.setFont(font);
+	text.setFillColor(sf::Color::White);
+	text.setPosition(sf::Vector2f(0, 0));
+	text.scale(sf::Vector2f(0.2, 0.2));
 }
 
 void Stats::incrementhitTargets()
@@ -52,8 +47,14 @@ int Stats::getMissedShots()
 
 void Stats::calculateAccuracy()
 {
-	//((total - missed /total) * 100)
-	this->accuracy = ((totalShots - missedShots) / totalShots) * 100;
+	if (this->totalShots != 0)
+	{
+		this->accuracy = ((((float)totalShots - (float)missedShots) / (float)totalShots) * 100);
+	}
+	else
+	{
+		this->accuracy = 0.0f;
+	}
 }
 
 float Stats::getAccuracy()
@@ -71,3 +72,32 @@ int Stats::getTotalPoints()
 {
 	return this->totalPoints;
 }
+
+void Stats::updateText(void)
+{
+	std::ostringstream s;
+	s << "Last Run Stats:" <<
+		"\nTotal Shots: " << totalShots << 
+		"\nMissed Shots: " << missedShots << 
+		"\nAccuracy: " << getAccuracy() << 
+		"%\nTargets Hit: " << hitTargets << 
+		"\nTotal Points: " << totalPoints;
+	sf::String str(s.str());
+	this->text.setString(str);
+}
+
+sf::Text& Stats::getText(void)
+{
+	this->updateText();
+	return this->text;
+}
+
+void Stats::resetStats(void)
+{
+	this->totalShots = 0;
+	this->missedShots = 0;
+	this->accuracy = 0.0;
+	this->totalPoints = 0;
+	this->hitTargets = 0;
+}
+

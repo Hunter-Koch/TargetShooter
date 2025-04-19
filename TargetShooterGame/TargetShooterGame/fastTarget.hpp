@@ -11,12 +11,14 @@ public:
 	fastTarget(): Target()
 	{
 		this->setTimeAlive(7);
-		this->setScoreAwarded(3);
+		this->setScoreAwarded(4);
 
 		fastRight.loadFromFile("Assets\\targets\\FastTargetRight.png");
 		fastLeft.loadFromFile("Assets\\targets\\FastTargetLeft.png");
 		fastUp.loadFromFile("Assets\\targets\\FastTargetUp.png");
 		fastDown.loadFromFile("Assets\\targets\\FastTargetDown.png");
+
+		speed = 0.7f;
 	}
 
 	sf::Texture fastRight;
@@ -34,7 +36,7 @@ public:
 private:
 	int direction = 1;
 //	int directionY = 1;
-	float speed = 1.0f;
+	float speed;
 //	float verticalSpeed = 0.5f;
 
 	bool waiting = false;

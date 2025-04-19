@@ -24,4 +24,19 @@ Text& Player::getpCurrentTime(float currentTimerinSeconds)
     return this->text;
 }
 
+Text& Player::getStatsAsText(void)
+{
+    return this->playerStats.getText();
+}
+
+void Player::resetPlayerStats(void)
+{
+    this->playerStats.resetStats();
+}
+
+Stats& Player::getStats(void)
+{
+    return this->playerStats;
+}
+
 

@@ -10,7 +10,7 @@ public:
     {
         this->getTexture().loadFromFile("Assets\\targets\\BalloonTarget.png");
         this->setTexture(&getTexture(), true);
-        this->setScoreAwarded(4);
+        this->setScoreAwarded(1);
         this->setTimeAlive(7);
     }
 

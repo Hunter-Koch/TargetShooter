@@ -24,15 +24,16 @@ void GameDirector::checkSpawns(Timer& timer)
 		this->Tarray[i]->appear();
 
 		//setting next time to spawn
-		this->timeAtNextSpawn += randRange(1, 2);
+		this->timeAtNextSpawn += 1;
 	}
 }
 
-void GameDirector::checkClick(sf::RenderWindow& thisWindow, sf::Vector2f& mouse, Player& p)
+bool GameDirector::checkClick(sf::RenderWindow& thisWindow, sf::Vector2f& mouse, Player& p)
 {
 	sf::FloatRect bounds = this->Tarray[0]->getGlobalBounds();
-		
+	bool success = false;
     // hit test
+	p.getStats().incrementTotalShots();
 	for (int i = 1; !bounds.contains(mouse) && i < 15; i++)
     {
 		if (!this->Tarray[i]->getIsDestroyed())
@@ -41,11 +42,20 @@ void GameDirector::checkClick(sf::RenderWindow& thisWindow, sf::Vector2f& mouse,
 
 			if (bounds.contains(mouse))
 			{
+				success = true;
 				this->Tarray[i]->destroy();
 				p.AddToTime(Tarray[i]->getScoreAwarded());
+				p.getStats().updateTotalPoints(Tarray[i]->getScoreAwarded());
+				p.getStats().incrementhitTargets();
 			}
 		}
     }
+
+	if (success == false)
+	{
+		p.getStats().incrementMissedShots();
+	}
+	return success;
 }
 
 void GameDirector::renderTargets(sf::RenderWindow& thisWindow)
@@ -73,10 +83,6 @@ void GameDirector::runTargetUpdates(void)
 
 void GameDirector::renderCrosshair(sf::RenderWindow& thisWindow)
 {
-	//sf::Cursor cur(sf::Cursor::Type::Wait);
-	//thisWindow.setMouseCursor(cur);
-
-
 	sf::Texture crosshairTexture;
 	crosshairTexture.loadFromFile("Assets/Crosshair/Crosshair_64x64.png", true);
 	sf::Sprite crosshair(crosshairTexture);
@@ -133,4 +139,17 @@ void GameDirector::setTarray(void)
 	this->Tarray[14] = new Target;
 }
 
-//to do: figure out why index 0 cant be destroyed
+void GameDirector::reset(void)
+{
+	this->timeAtNextSpawn = 1;
+	destroyAllTargets();
+}
+
+void GameDirector::destroyAllTargets(void)
+{
+	for (int i = 1; i < 15; i++)//do i = 0 when figure out why 0 cant work
+	{
+		this->Tarray[i]->setIsDestryed(true);
+	}
+}
+

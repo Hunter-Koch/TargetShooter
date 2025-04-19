@@ -22,6 +22,10 @@ public:
 	void setTotalTime(int newTime);
 	void AddToTime(int addToTime);
 	Text& getpCurrentTime(float currentTimerinSeconds);
+	Text& getStatsAsText(void);
+	void resetPlayerStats(void);
+	Stats& getStats(void);
+
 
 private:
 	int totalTime;

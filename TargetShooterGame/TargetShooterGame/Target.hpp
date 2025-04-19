@@ -14,7 +14,7 @@ public:
 	Target() : sound(destroyEffect), sf::CircleShape(100)
 	{
 		this->setPosition(sf::Vector2f(0,1000));
-		this->mScoreAwarded = 3;
+		this->mScoreAwarded = 1;
 		this->destroyEffect.loadFromFile("Assets\\sounds\\destroy.mp3");
 		this->appearEffect.loadFromFile("Assets\\sounds\\appear.mp3");
 		this->warningEffect.loadFromFile("Assets\\sounds\\warning.mp3");
@@ -40,7 +40,7 @@ public:
 		this->warningEffect.loadFromFile("Assets\\sounds\\warning.mp3");
 
 		this->sound.setVolume(50);//ranges from 0-100
-		mScoreAwarded = 3;
+		mScoreAwarded = 1;
 		this->isDestroyed = true;
 		this->timeAlive = 3;
 		this->targetTimer.stop();

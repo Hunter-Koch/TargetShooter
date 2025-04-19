@@ -1,4 +1,4 @@
-#ifndef  STATS
+#ifndef STATS
 #define STATS
 
 #include "Target.hpp"
@@ -8,9 +8,6 @@ class Stats
 {
 public:
 	Stats();
-
-	void incrementMissedTargets();
-	int getMissedTargets();
 
 	void incrementhitTargets();
 	int getHitTargets();
@@ -27,13 +24,19 @@ public:
 	void updateTotalPoints(int addedPoints);
 	int getTotalPoints();
 
+	void updateText(void);
+	sf::Text& getText(void);
+
+	void resetStats(void);
+
 private:
-	int missedTargets;
 	int hitTargets;
 	int totalShots;
 	int missedShots;
 	float accuracy;
 	int totalPoints;
+	sf::Text text;
+	sf::Font font;
 };
 
 #endif

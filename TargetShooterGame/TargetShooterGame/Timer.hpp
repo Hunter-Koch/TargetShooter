@@ -21,7 +21,7 @@ public:
 	void setTextStringFromFloat(const float& f);
 	//t.setTextStringFromFloat(t.getElapsedTime().asSeconds());
 	//window.draw(t.getText());
-//because its also a Clock, its timer starts when its initalized, also has functions stop(), start(), restart(), 
+	//because its also a Clock, its timer starts when its initalized, also has functions stop(), start(), restart(), 
 private:
 	sf::Font font;//text needs to keep reference of font, so is data member
 	sf::Text text;
