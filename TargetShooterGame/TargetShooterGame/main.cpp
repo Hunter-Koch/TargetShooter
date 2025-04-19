@@ -28,12 +28,6 @@ int main()
     sf::Sprite staticBackground(backgroundTexture);
     staticBackground.setScale(sf::Vector2f(4, 4));
 
-    //texture and sprite for static background
-    sf::Texture backgroundTexture("Assets\\background\\Background_sprite.png");
-    sf::Sprite staticBackground(backgroundTexture);
-    staticBackground.setScale(sf::Vector2f(4, 4));
-
-
     while (window.isOpen())
     {
         if (p.getTotalTime() - time.getElapsedTime().asSeconds() <= 0)
