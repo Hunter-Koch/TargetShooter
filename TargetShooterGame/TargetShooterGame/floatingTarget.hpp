@@ -23,6 +23,7 @@ public:
     void update() override;
 
 private:
+    int direction = 1;
     float x = 0;
     float speed = 0.1f; // Adjust for how fast it moves
     float amplitude = 100.0f; // Curve height

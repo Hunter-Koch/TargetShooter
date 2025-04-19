@@ -6,6 +6,8 @@
 #include "duckTarget.hpp"
 #include "floatingTarget.hpp"
 #include "negativeTarget.hpp"
+#include "fastTarget.hpp"
+#include "smallTarget.hpp"
 #include "Player.hpp"
 
 class GameDirector

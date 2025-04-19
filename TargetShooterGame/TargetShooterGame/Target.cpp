@@ -22,6 +22,12 @@ void Target::playAppearEffect(void)
     sound.play();
 }
 
+void Target::playWarningEffect(void)
+{
+    sound.setBuffer(this->warningEffect);
+    sound.play();
+}
+
 bool Target::getIsDestroyed(void)
 {
     return this->isDestroyed;

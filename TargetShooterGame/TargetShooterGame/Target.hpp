@@ -18,6 +18,8 @@ public:
 		this->destroyEffect.loadFromFile("Assets\\sounds\\destroy.mp3");
 		this->appearEffect.loadFromFile("Assets\\sounds\\appear.mp3");
 		this->texture.loadFromFile("Assets\\targets\\Target_64x64.png");
+		this->warningEffect.loadFromFile("Assets\\sounds\\warning.mp3");
+		this->texture.loadFromFile("Assets\\targets\\Basic\\Target 64x64.png");
 		this->setTexture(&texture, true);
 		this->sound.setVolume(50);//ranges from 0-100
 		this->isDestroyed = true;
@@ -36,6 +38,7 @@ public:
 
 		this->destroyEffect.loadFromFile("Assets\\sounds\\destroy.mp3");
 		this->appearEffect.loadFromFile("Assets\\sounds\\appear.mp3");
+		this->warningEffect.loadFromFile("Assets\\sounds\\warning.mp3");
 
 		this->sound.setVolume(50);//ranges from 0-100
 		mScoreAwarded = 3;
@@ -48,6 +51,7 @@ public:
 	void setScoreAwarded(int newScore);
 	void playDestroyEffect(void);
 	void playAppearEffect(void);
+	void playWarningEffect(void);
 	bool getIsDestroyed(void);
 	void setIsDestryed(bool newbool);
 	int getTimeAlive(void);
@@ -73,6 +77,7 @@ private:
 	sf::Texture texture;
 	sf::SoundBuffer destroyEffect;
 	sf::SoundBuffer appearEffect;
+	sf::SoundBuffer warningEffect;
 	sf::Sound sound;
 	int timeAlive;
 	Timer targetTimer;
