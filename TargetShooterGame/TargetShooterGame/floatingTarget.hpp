@@ -12,6 +12,10 @@ public:
         this->setTexture(&getTexture(), true);
         this->setScoreAwarded(1);
         this->setTimeAlive(7);
+        sf::SoundBuffer newAppearSound("Assets\\sounds\\BalloonInflate.wav");
+        this->setAppearEffect(newAppearSound);
+        sf::SoundBuffer newDissapearSound("Assets\\sounds\\BalloonPop.wav");
+        this->setDestroyEffect(newDissapearSound);
     }
 
     

@@ -1,12 +1,14 @@
 #include "healthyTarget.hpp"
 
-HealthyTarget::HealthyTarget(int newHealth)
-{
-	this->health = (newHealth - 1);
-}
+//HealthyTarget::HealthyTarget(int newHealth)
+//{
+//	
+//	this->health = (newHealth - 1);
+//}
 
 void HealthyTarget::deincrementHealth()
 {
+	playHitEffect();
 	this->health--;
 }
 
@@ -18,6 +20,12 @@ int HealthyTarget::getHealth()
 void HealthyTarget::setHealth(int newHealth)
 {
 	this->health = newHealth;
+}
+
+void HealthyTarget::playHitEffect()
+{
+	hitSound.setBuffer(this->hitEffect);
+	hitSound.play();
 }
 
 void HealthyTarget::destroy()

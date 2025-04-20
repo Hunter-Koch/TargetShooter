@@ -24,6 +24,11 @@ int main()
     GameDirector director;
     MainMenu mainMenu;
 
+    //set gunshot sounds
+    sf::SoundBuffer shotSound("Assets\\sounds\\Gunshot.wav");
+    sf::Sound shot(shotSound);
+    shot.setVolume(50); 
+
     sf::Texture backgroundTexture("Assets\\background\\Background_sprite.png");
     sf::Sprite staticBackground(backgroundTexture);
     staticBackground.setScale(sf::Vector2f(4, 4));
@@ -67,6 +72,10 @@ int main()
                }
                else
                {
+                   //play gunshot sounds
+                   shot.setBuffer(shotSound);
+                   shot.play();
+
                     director.checkClick(window, mouse, p);
                }
            }
