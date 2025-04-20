@@ -60,6 +60,11 @@ public:
 	void stopTimer(void);
 	float getTargetTimerInSeconds(void);
 
+	//set the new sounds of the derived targets
+	void setDestroyEffect(sf::SoundBuffer& newSound);
+	void setAppearEffect(sf::SoundBuffer& newSound);
+	void setWarningEffect(sf::SoundBuffer& newSound);
+
 	//virutal function that should be overrided in target variants for use in gameDirector.hpp
 	virtual void destroy(void);
 

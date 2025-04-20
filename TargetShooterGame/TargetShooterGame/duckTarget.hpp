@@ -13,6 +13,11 @@ public:
 		this->setRadius(60);
 		this->setTimeAlive(7);
 		this->setScoreAwarded(1);
+
+		sf::SoundBuffer newAppearSound("Assets\\sounds\\Flapping.wav");
+		this->setAppearEffect(newAppearSound);
+		sf::SoundBuffer newDissapearSound("Assets\\sounds\\Quack.mp3");
+		this->setDestroyEffect(newDissapearSound);
 	}
 
 	void appear() override;

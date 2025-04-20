@@ -6,18 +6,34 @@
 class HealthyTarget : public Target
 {
 public:
-	HealthyTarget() : Target()
+	HealthyTarget() : Target(), hitSound(hitEffect)
 	{
 		this->getTexture().loadFromFile("Assets\\targets\\HealthyTarget.png");
 		this->setTexture(&getTexture(), true);
 		this->health = 2;
+		this->hitEffect.loadFromFile("Assets\\sounds\\Ping.wav");
+		this->hitSound.setVolume(50);//ranges from 0-100
+		sf::SoundBuffer newAppearSound("Assets\\sounds\\MetalClick.wav");
+		this->setAppearEffect(newAppearSound);
+		sf::SoundBuffer newDissapearSound("Assets\\sounds\\Clang.mp3");
+		this->setDestroyEffect(newDissapearSound);
 	};
-	HealthyTarget(int newHealth);
+	HealthyTarget(int newHealth) : hitSound(hitEffect)
+	{
+		this->health = (newHealth - 1);
+		this->hitEffect.loadFromFile("Assets\\sounds\\Ping.wav");
+		this->hitSound.setVolume(50);//ranges from 0-100
+		sf::SoundBuffer newAppearSound("Assets\\sounds\\MetalClick.wav");
+		this->setAppearEffect(newAppearSound);
+		sf::SoundBuffer newDissapearSound("Assets\\sounds\\Clang.mp3");
+		this->setDestroyEffect(newDissapearSound);
+	};
 
 	void deincrementHealth();
 	int getHealth();
 	void setHealth(int newHealth);
 	
+	void playHitEffect();
 	//overloaded functions
 	void destroy() override;
 	void appear() override;
@@ -25,6 +41,8 @@ public:
 	
 private:
 	int health;
+	sf::SoundBuffer hitEffect;
+	sf::Sound hitSound;
 };
 
 #endif
