@@ -18,6 +18,10 @@ public:
 		fastUp.loadFromFile("Assets\\targets\\FastTargetUp.png");
 		fastDown.loadFromFile("Assets\\targets\\FastTargetDown.png");
 
+		sf::SoundBuffer newAppearSound("Assets\\sounds\\whoosh.wav");
+		this->setAppearEffect(newAppearSound);
+		sf::SoundBuffer newDissapearSound("Assets\\sounds\\thud.wav");
+		this->setDestroyEffect(newDissapearSound);
 		speed = 0.7f;
 	}
 

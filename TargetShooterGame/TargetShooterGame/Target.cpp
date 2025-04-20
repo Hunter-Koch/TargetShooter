@@ -63,6 +63,21 @@ float Target::getTargetTimerInSeconds(void)
     return this->targetTimer.getElapsedTime().asSeconds();
 }
 
+void Target::setDestroyEffect(sf::SoundBuffer& newSound)
+{
+    this->destroyEffect = newSound;
+}
+
+void Target::setAppearEffect(sf::SoundBuffer& newSound)
+{
+    this->appearEffect = newSound;
+}
+
+void Target::setWarningEffect(sf::SoundBuffer& newSound)
+{
+    this->warningEffect = newSound;
+}
+
 void Target::destroy(void)
 {
     this->stopTimer();

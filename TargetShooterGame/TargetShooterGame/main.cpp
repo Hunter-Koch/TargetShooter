@@ -21,11 +21,17 @@ int main()
 
     sf::Music musicDirector("Assets\\sounds\\music.mp3");
     musicDirector.play();
+    musicDirector.setVolume(30);
 
     Player p;
     Timer time;
     GameDirector director;
     MainMenu mainMenu;
+
+    //set gunshot sounds
+    sf::SoundBuffer shotSound("Assets\\sounds\\Gunshot.wav");
+    sf::Sound shot(shotSound);
+    shot.setVolume(50); 
 
     sf::Texture backgroundTexture("Assets\\background\\Background_sprite.png");
     sf::Sprite staticBackground(backgroundTexture);
@@ -71,6 +77,10 @@ int main()
                }
                else
                {
+                   //play gunshot sounds
+                   shot.setBuffer(shotSound);
+                   shot.play();
+
                     director.checkClick(window, mouse, p);
                }
            }

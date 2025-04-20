@@ -222,6 +222,43 @@ public:
 	float getTargetTimerInSeconds(void);
 
 	/*
+	* Function: void Target::setDestroyEffect(sf::SoundBuffer& newSound)
+	* Date Created: 4/20/2025
+	* Date Last Modified: 4/20/2025
+	* Description: Setter for destroyEffect data member.
+	* Input parameters: sf::SoundBuffer& newSound
+	* Returns: void 
+	* Preconditions: N/A
+	* Postconditions: Sets destroyEffect data member to sf::SoundBuffer& newSound.
+	*/
+	void setDestroyEffect(sf::SoundBuffer& newSound);
+
+	/*
+	* Function: void Target::setAppearEffect(sf::SoundBuffer& newSound)
+	* Date Created: 4/20/2025
+	* Date Last Modified: 4/20/2025
+	* Description: Setter for appearEffect data member.
+	* Input parameters: sf::SoundBuffer& newSound
+	* Returns: void 
+	* Preconditions: N/A
+ 	* Postconditions: Sets appearEffect data member to sf::SoundBuffer& newSound.
+	*/
+	void setAppearEffect(sf::SoundBuffer& newSound);
+
+	/*
+	* Function: void Target::setWarningEffect(sf::SoundBuffer& newSound)
+	* Date Created: 4/20/2025
+	* Date Last Modified: 4/20/2025
+	* Description: Setter for warningEffect data member.
+	* Input parameters: sf::SoundBuffer& newSound
+	* Returns: void 
+	* Preconditions: n/a
+ 	* Postconditions: Sets warningEffect data member to sf::SoundBuffer& newSound.
+	*/
+	void setWarningEffect(sf::SoundBuffer& newSound);
+
+
+	/*
 	* Function: void Target::destroy(void)
 	* Date Created: 4/15/2025
 	* Date Last Modified: 4/20/2025
