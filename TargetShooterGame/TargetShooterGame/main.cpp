@@ -19,6 +19,9 @@ int main()
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
+    sf::Music musicDirector("Assets\\sounds\\music.mp3");
+    musicDirector.play();
+
     Player p;
     Timer time;
     GameDirector director;
@@ -33,6 +36,8 @@ int main()
         if (p.getTotalTime() - time.getElapsedTime().asSeconds() <= 0)
         {
             mainMenu.setinMenu(true);
+            musicDirector.play();
+            time.restart();
         }
 
         if(!mainMenu.getinMenu())
@@ -41,7 +46,6 @@ int main()
             director.runTargetUpdates();
         }
 
-       
 
        while (const std::optional event = window.pollEvent())
        {

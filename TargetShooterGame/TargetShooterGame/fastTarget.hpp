@@ -11,7 +11,7 @@ public:
 	fastTarget(): Target()
 	{
 		this->setTimeAlive(7);
-		this->setScoreAwarded(4);
+		this->setScoreAwarded(3);
 
 		fastRight.loadFromFile("Assets\\targets\\FastTargetRight.png");
 		fastLeft.loadFromFile("Assets\\targets\\FastTargetLeft.png");

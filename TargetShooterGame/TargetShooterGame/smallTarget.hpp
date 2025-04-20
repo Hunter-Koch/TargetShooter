@@ -9,7 +9,7 @@ public:
 	smallTarget() : Target()
 	{
 		this->setTimeAlive(1);
-		this->setScoreAwarded(3);
+		this->setScoreAwarded(2);
 		this->setRadius(40);
 	}
 
