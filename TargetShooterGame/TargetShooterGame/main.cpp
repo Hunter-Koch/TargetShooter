@@ -71,8 +71,8 @@ int main()
                {
                    
                    sf::FloatRect bounds = mainMenu.getButton().getGlobalBounds();
-                   sf::FloatRect ruleBBounds = mainMenu.getRuleButton().getGlobalBounds();
-                   sf::FloatRect backBBounds = mainMenu.getBackButton().getGlobalBounds();
+                   sf::FloatRect ruleBBounds = mainMenu.getRuleButton().getGlobalBounds(); 
+                   sf::FloatRect backBBounds = mainMenu.getBackButton().getGlobalBounds(); 
                    if (bounds.contains(mouse))
                    {
                        mainMenu.setinMenu(false);
