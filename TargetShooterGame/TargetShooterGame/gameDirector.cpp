@@ -162,3 +162,21 @@ void GameDirector::destroyAllTargets(void)
 	}
 }
 
+bool GameDirector::isArrayInitialized(void)
+{
+	for (int i = 0; i < 15; i++)
+	{
+		if (Tarray[i] == nullptr)
+			return false;
+
+		try {
+			Tarray[i]->getIsDestroyed(); 
+		}
+		catch (...) {
+			return false; 
+		}
+
+	}
+	return true;
+	
+}

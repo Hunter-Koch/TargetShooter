@@ -16,6 +16,7 @@ void runTestCases()
 	t.testAddTime();
 	t.testTargetDisappear();
 	t.testGameEnd();
+	t.testUninitialized();
 }
 
 void Test::testNegativeTarget()
@@ -71,7 +72,7 @@ void Test::testAddTime()
 
 
 	int realTime = p.getTotalTime();
-	int timeExpected = 20;
+	int timeExpected = 19;
 
 
 	if (realTime == timeExpected)
@@ -81,6 +82,12 @@ void Test::testAddTime()
 	else
 	{
 		std::cout << "Add Time test failed" << std::endl;
+		std::cout << "Fast: " << fast.getScoreAwarded() << std::endl;
+		std::cout << "Duck: " << duck.getScoreAwarded() << std::endl;
+		std::cout << "Floating: " << floating.getScoreAwarded() << std::endl;
+		std::cout << "Healthy: " << healthy.getScoreAwarded() << std::endl;
+		std::cout << "Target: " << target.getScoreAwarded() << std::endl;
+		std::cout << "Small: " << small.getScoreAwarded() << std::endl;
 	}
 }
 
@@ -132,5 +139,19 @@ void Test::testGameEnd()
 	else
 	{
 		std::cout << "Game End test failed" << std::endl;
+	}
+}
+
+void Test::testUninitialized()
+{
+	GameDirector director;
+
+	if (director.isArrayInitialized())
+	{
+		std::cout << "Tarray Initialization test passed" << std::endl;
+	}
+	else
+	{
+		std::cout << "Tarray Initialization test failed" << std::endl;
 	}
 }

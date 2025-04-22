@@ -156,6 +156,18 @@ public:
 	*/
 	void destroyAllTargets(void);
 
+	/*
+     * Function: bool isArrayInitialized(void)
+	 * Date Created: 4/15/2025
+	 * Date Last Modified: 4/22/2025
+	 * Description: Tests to check if Tarray is initialized
+	 * Input parameters: void
+	 * Returns: true if all are initialized, false if any are not
+	 * Preconditions: Tarray declared
+	 * Postconditions: true if initialized false if not
+	 */
+	bool isArrayInitialized(void);
+
 private:
 	Target* Tarray[15];
 	float timeAtNextSpawn;
