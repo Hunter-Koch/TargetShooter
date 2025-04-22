@@ -101,9 +101,9 @@ sf::Texture& Target::getTexture()
 
 void Target::update()
 {
-  //  timeAlive += 0.1f; // Simulate time passing
+ 
 
-    if (timeAlive >= this->getTargetTimerInSeconds())
+    if (timeAlive <= this->getTargetTimerInSeconds())
     {
         this->destroy();
     }
