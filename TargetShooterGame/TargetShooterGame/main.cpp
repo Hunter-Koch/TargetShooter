@@ -6,11 +6,13 @@
 #include "gameDirector.hpp"
 #include "Player.hpp"
 #include "mainMenu.hpp"
-
+#include "TestCases.hpp"
 
 int main()
 {
     srand(time(NULL));
+
+    runTestCases();
 
     //this is a test comment. delete me later
     sf::RenderWindow window(sf::VideoMode({ 1280, 720 }), "Target Shooter");
@@ -40,6 +42,7 @@ int main()
 
     while (window.isOpen())
     {
+        
         if (p.getTotalTime() - time.getElapsedTime().asSeconds() <= 0)
         {
             mainMenu.setinMenu(true);

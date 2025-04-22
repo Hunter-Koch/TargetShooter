@@ -16,6 +16,7 @@
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="fastTarget.cpp" />
     <ClCompile Include="smallTarget.cpp" />
+    <ClCompile Include="TestCases.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Debug.hpp" />
@@ -32,5 +33,6 @@
     <ClInclude Include="Timer.hpp" />
     <ClInclude Include="fastTarget.hpp" />
     <ClInclude Include="smallTarget.hpp" />
+    <ClInclude Include="TestCases.hpp" />
   </ItemGroup>
 </Project>

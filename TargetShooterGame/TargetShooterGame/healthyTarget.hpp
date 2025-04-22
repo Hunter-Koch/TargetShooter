@@ -10,12 +10,21 @@ public:
 	{
 		this->getTexture().loadFromFile("Assets\\targets\\HealthyTarget.png");
 		this->setTexture(&getTexture(), true);
-		this->health = 2;
+		this->setHealth(2);
 		this->hitEffect.loadFromFile("Assets\\sounds\\Ping.wav");
 		this->hitSound.setVolume(50);//ranges from 0-100
-		sf::SoundBuffer newAppearSound("Assets\\sounds\\MetalClick.wav");
+		this->setScoreAwarded(2);
+
+		sf::SoundBuffer newAppearSound;
+		newAppearSound.loadFromFile("Assets\\sounds\\MetalClick.wav");
+
+		//sf::SoundBuffer newAppearSound("Assets\\sounds\\MetalClick.wav");
 		this->setAppearEffect(newAppearSound);
-		sf::SoundBuffer newDissapearSound("Assets\\sounds\\Clang.mp3");
+
+		sf::SoundBuffer newDissapearSound;
+		newDissapearSound.loadFromFile("Assets\\sounds\\Clang.mp3");
+
+		/*sf::SoundBuffer newDissapearSound("Assets\\sounds\\Clang.mp3");*/
 		this->setDestroyEffect(newDissapearSound);
 	};
 	HealthyTarget(int newHealth) : hitSound(hitEffect)
@@ -23,9 +32,18 @@ public:
 		this->health = (newHealth - 1);
 		this->hitEffect.loadFromFile("Assets\\sounds\\Ping.wav");
 		this->hitSound.setVolume(50);//ranges from 0-100
-		sf::SoundBuffer newAppearSound("Assets\\sounds\\MetalClick.wav");
+		this->setScoreAwarded(2);
+
+		sf::SoundBuffer newAppearSound;
+		newAppearSound.loadFromFile("Assets\\sounds\\MetalClick.wav");
+
+		//sf::SoundBuffer newAppearSound("Assets\\sounds\\MetalClick.wav");
 		this->setAppearEffect(newAppearSound);
-		sf::SoundBuffer newDissapearSound("Assets\\sounds\\Clang.mp3");
+
+		sf::SoundBuffer newDissapearSound;
+		newDissapearSound.loadFromFile("Assets\\sounds\\Clang.mp3");
+
+		/*sf::SoundBuffer newDissapearSound("Assets\\sounds\\Clang.mp3");*/
 		this->setDestroyEffect(newDissapearSound);
 	};
 
