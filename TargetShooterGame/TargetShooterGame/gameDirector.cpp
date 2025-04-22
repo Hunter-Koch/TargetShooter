@@ -122,13 +122,13 @@ bool GameDirector::isAllTargetsSpawned(void)
 void GameDirector::setTarray(void)
 {
 	//choose amount of each target
-	this->Tarray[0] = new fastTarget;
+	this->Tarray[0] = new HealthyTarget;
 	this->Tarray[1] = new fastTarget;
 	this->Tarray[2] = new fastTarget;
 	this->Tarray[3] = new floatingTarget;
 	this->Tarray[4] = new negativeTarget;
 	this->Tarray[5] = new negativeTarget;
-	this->Tarray[6] = new duckTarget;
+	this->Tarray[6] = new HealthyTarget;
 	this->Tarray[7] = new duckTarget;
 	this->Tarray[8] = new duckTarget;
 	this->Tarray[9] = new duckTarget;
