@@ -4,7 +4,7 @@ CPT_S 122, Lecture Section 01, group assignment PA9. A shooting range style game
 
 Group members:
 -Hunter Koch
--Alexis Maria
+-Alexis Maria (Lab Section 9)
 -Reed Williams
 
 Basic Rules:
