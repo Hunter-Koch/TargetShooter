@@ -23,6 +23,7 @@ int main()
     musicDirector.play();
     musicDirector.setVolume(30);
 
+
     Player p;
     Timer time;
     GameDirector director;
@@ -65,7 +66,10 @@ int main()
 
                if (mainMenu.getinMenu())
                {
+                   
                    sf::FloatRect bounds = mainMenu.getButton().getGlobalBounds();
+                   sf::FloatRect ruleBBounds = mainMenu.getRuleButton().getGlobalBounds();
+                   sf::FloatRect backBBounds = mainMenu.getBackButton().getGlobalBounds();
                    if (bounds.contains(mouse))
                    {
                        mainMenu.setinMenu(false);
@@ -73,6 +77,17 @@ int main()
                        p.resetPlayerStats();
                        director.reset();
                        p.setTotalTime(10.0);
+                   }
+                   else if (mainMenu.getInRules() == false && ruleBBounds.contains(mouse))//check if the rules button was pushed
+                   {
+                       mainMenu.setinRules(true);
+                       
+                   }
+
+                   else if (mainMenu.getInRules() == true && backBBounds.contains(mouse))
+                   {
+                       mainMenu.setinRules(false);
+                       
                    }
                }
                else
@@ -84,14 +99,28 @@ int main()
                     director.checkClick(window, mouse, p);
                }
            }
+           if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape))
+           {
+                 
+               mainMenu.setinMenu(true);
+           }
        }
 
         window.clear();
         window.draw(staticBackground);
         if (mainMenu.getinMenu())
         {
-            mainMenu.drawMenu(window);
-            window.draw(p.getStatsAsText());
+            if (mainMenu.getInRules())
+            {
+                mainMenu.drawRules(window);
+                
+            }
+            else {
+                mainMenu.drawMenu(window);
+                window.draw(p.getStatsAsText());
+            }
+
+           
         }
         else
         {

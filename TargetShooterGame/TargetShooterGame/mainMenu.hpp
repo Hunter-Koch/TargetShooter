@@ -9,7 +9,7 @@
 
 #include "miscFunctions.hpp"
 #include "Target.hpp"
-
+#include "negativeTarget.hpp"
 class MainMenu
 {
 public:
@@ -24,7 +24,10 @@ public:
 	* Preconditions: MainMenu object has to be created.
 	* Postconditions: Initalizes data members, opens proper asset files.
 	*/
-	MainMenu() : title(font, "TARGET SHOOTER", 50), ButtonText(font, "PLAY GAME", 50), subtitle(font,"Developed by Hunter Koch, Alexis Maria, and Reed Williams", 50)//Text(Font& font, sf::string text, int maxCharacters)
+	MainMenu() : title(font, "TARGET SHOOTER", 50), ButtonText(font, "PLAY GAME", 50), subtitle(font, "Developed by Hunter Koch, Alexis Maria, and Reed Williams", 50),    //Text(Font& font, sf::string text, int maxCharacters)
+	RuleButtonText(font, "RULES", 20), BackToMenuText(font, "BACK TO MENU", 20), rule1(font, "Click on targets to shoot them", 50),
+		rule2(font, "Dont shoot cats", 50), rule3(font, "Shoot as many targets as you \ncan before time runs out"),
+		rule3T(font, "2.18901", 50)
 	{
 		font.openFromFile("Assets\\fonts\\TTT-Regular.otf");
 
@@ -45,6 +48,51 @@ public:
 		button.setPosition(sf::Vector2f(490, 200));
 		button.setRadius(150);
 		inMenu = true;
+
+		inRules = false;
+		ruleButton.setPosition(sf::Vector2f(1130, 580));
+		ruleButton.setRadius(50);
+
+		backToMenu.setPosition(sf::Vector2f(1130, 580));
+		backToMenu.setRadius(50);
+
+		RuleButtonText.setFont(font);
+		RuleButtonText.setFillColor(sf::Color::Black);
+		RuleButtonText.setPosition(sf::Vector2f(1160, 690));
+		RuleButtonText.scale(sf::Vector2f(1, 1));
+
+
+		//rule menu text
+		BackToMenuText.setFont(font);
+		BackToMenuText.setFillColor(sf::Color::Black);
+		BackToMenuText.setPosition(sf::Vector2f(1160, 690));
+		BackToMenuText.scale(sf::Vector2f(1, 1));
+
+		rule1.setFont(font);
+		rule1.setFillColor(sf::Color::Black);
+		rule1.setPosition(sf::Vector2f(200, 190));
+		rule1.scale(sf::Vector2f(1, 1));
+
+		rule2.setFont(font);
+		rule2.setFillColor(sf::Color::Black);
+		rule2.setPosition(sf::Vector2f(200, 290));
+		rule2.scale(sf::Vector2f(1, 1));
+
+		rule3.setFont(font);
+		rule3.setFillColor(sf::Color::Black);
+		rule3.setPosition(sf::Vector2f(200, 390));
+		rule3.scale(sf::Vector2f(1.25, 1.25));
+
+		rule1T.setPosition(sf::Vector2f(805, 155));
+		rule1T.setRadius(70);
+
+		rule2T.setPosition(sf::Vector2f(550, 260));
+		rule2T.setRadius(70);
+
+		rule3T.setFont(font);
+		rule3T.setFillColor(sf::Color::White);
+		rule3T.setPosition(sf::Vector2f(680, 390));
+		rule3T.scale(sf::Vector2f(1.2, 1.2));
 	}
 
 	/*
@@ -59,6 +107,8 @@ public:
 	*/
 	void drawMenu(sf::RenderWindow& win) const;
 
+	void drawRules(sf::RenderWindow& win) const;
+
 	/*
 	* Function: void MainMenu::setinMenu(bool newBool)
 	* Date Created: 4/15/2025
@@ -70,6 +120,8 @@ public:
 	* Postconditions: Modifies inMenu data member to value of newBool.
 	*/
 	void setinMenu(bool newBool);
+
+	void setinRules(bool newBool);
 
 	/*
 	* Function: bool MainMenu::getinMenu(void)
@@ -83,6 +135,8 @@ public:
 	*/
 	bool getinMenu(void);
 
+	bool getInRules(void);
+
 	/*
 	* Function: sf::CircleShape& MainMenu::getButton(void)
 	* Date Created: 4/15/2025
@@ -95,11 +149,29 @@ public:
 	*/
 	sf::CircleShape& getButton(void);
 
+
+	sf::CircleShape& getRuleButton(void);
+
+	sf::CircleShape& getBackButton(void);
+
 private:
 	bool inMenu;
+	bool inRules;
 	sf::Font font;
 	sf::Text title;
 	sf::Text subtitle;
 	sf::Text ButtonText;
+	sf::Text RuleButtonText;
+	sf::Text BackToMenuText;
 	Target button;
+	Target ruleButton;
+	Target backToMenu;
+
+	sf::Text rule1;
+	sf::Text rule2;
+	sf::Text rule3;
+	Target rule1T;
+	negativeTarget rule2T;
+	sf::Text rule3T;
+
 };
