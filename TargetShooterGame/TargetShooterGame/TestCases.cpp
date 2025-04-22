@@ -1,3 +1,12 @@
+/*****************************************************************
+* Programmer: Reed Williams, Hunter Koch, Alexis Maria
+* Class: CptS 122, Spring 2025; Lab Section 1
+* Programming Assignment: PA9
+* Date: April 22, 2025
+* Description: Content file that will include the definitons for
+* the TestCases.hpp file.
+*****************************************************************/
+
 #include "TestCases.hpp"
 
 void runTestCases()
@@ -81,16 +90,14 @@ void Test::testTargetDisappear()
 {
 	Target target; // live for 3 seconds
 
+	target.setTimeAlive(1);
 	target.appear();
 
-	float simulatedTime = 0.0f;
-	float step = 0.1f;
+	Timer t;
 
-
-	while (simulatedTime <= 3.5f)
+	while (t.getElapsedTime().asSeconds() <= 1)
 	{
 		target.update();
-		simulatedTime += step;
 	}
 
 	bool targetGone = target.getIsDestroyed();

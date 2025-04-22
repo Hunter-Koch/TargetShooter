@@ -1,3 +1,13 @@
+/*****************************************************************
+* Programmer: Reed Williams, Hunter Koch, Alexis Maria
+* Class: CptS 122, Spring 2025; Lab Section 1
+* Programming Assignment: PA9
+* Date: April 22, 2025
+* Description: File that will store main(), run most of the
+* operations, and take player input. This includes navigating menus, 
+* starting the game, and playing the game.
+*****************************************************************/
+
 #include <SFML/Graphics.hpp>
 #include "Target.hpp"
 #include "miscFunctions.hpp"

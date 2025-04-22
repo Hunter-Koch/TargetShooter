@@ -107,6 +107,17 @@ public:
 	*/
 	void drawMenu(sf::RenderWindow& win) const;
 
+
+	/*
+	* Function: void MainMenu::drawRules(sf::RenderWindow& win) const
+	* Date Created: 4/15/2025
+	* Date Last Modified: 4/20/2025
+	* Description: Takes in the render window and prints the rules assets to the screen.
+	* Input parameters: sf::RenderWindow& win
+	* Returns: void
+	* Preconditions: sf::RenderWindow& win must refer to the current open window, game must not be running. Must be in rules menu. InRules data member must be true.
+	* Postconditions: Renders Rules assets to screen.
+	*/
 	void drawRules(sf::RenderWindow& win) const;
 
 	/*
@@ -121,6 +132,16 @@ public:
 	*/
 	void setinMenu(bool newBool);
 
+	/*
+	* Function: void MainMenu::setInRules(bool newBool)
+	* Date Created: 4/15/2025
+	* Date Last Modified: 4/20/2025
+	* Description: Setter for inRules data member.
+	* Input parameters: bool newBool
+	* Returns: void
+	* Preconditions: N/A
+	* Postconditions: Modifies inRules data member to value of bool newBool.
+	*/
 	void setinRules(bool newBool);
 
 	/*
@@ -135,6 +156,16 @@ public:
 	*/
 	bool getinMenu(void);
 
+	/*
+	* Function: bool MainMenu::getInRules(void)
+	* Date Created: 4/15/2025
+	* Date Last Modified: 4/20/2025
+	* Description: Getter for inRules data member.
+	* Input parameters: void
+	* Returns: bool
+	* Preconditions: N/A
+	* Postconditions: Returns value of inRules data member.
+	*/
 	bool getInRules(void);
 
 	/*
@@ -149,9 +180,28 @@ public:
 	*/
 	sf::CircleShape& getButton(void);
 
-
+	/*
+	* Function: sf::CircleShape& MainMenu::getRuleButton(void)
+	* Date Created: 4/15/2025
+	* Date Last Modified: 4/20/2025
+	* Description: Getter for rulebutton data member.
+	* Input parameters: void
+	* Returns: sf::CircleShape&
+	* Preconditions: N/A
+	* Postconditions: Returns refrence of rulebutton data member.
+	*/
 	sf::CircleShape& getRuleButton(void);
 
+	/*
+	* Function: sf::CircleShape& MainMenu::getBackButton(void)
+	* Date Created: 4/15/2025
+	* Date Last Modified: 4/20/2025
+	* Description: Getter for backtoMenu data member.
+	* Input parameters: void
+	* Returns: sf::CircleShape&
+	* Preconditions: N/A
+	* Postconditions: Returns refrence of backtoMenu data member.
+	*/
 	sf::CircleShape& getBackButton(void);
 
 private:

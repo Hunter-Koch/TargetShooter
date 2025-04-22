@@ -1,22 +1,16 @@
+/*****************************************************************
+* Programmer: Reed Williams, Hunter Koch, Alexis Maria
+* Class: CptS 122, Spring 2025; Lab Section 1
+* Programming Assignment: PA9
+* Date: April 22, 2025
+* Description: Content file that will include the definitons for
+* the fastTarget.hpp file.
+*****************************************************************/
+
 #include "fastTarget.hpp"
 
 void fastTarget::appear()
 {
-
-	//this->restartTimer();
-	//this->setIsDestryed(false);
-
-	//// Set direction randomly
-	//direction = (rand() % 2 == 0) ? 1 : -1;
-
-	//// Spawn position based on direction
-	//sf::Vector2f spawnPos = (direction == 1)
-	//	? sf::Vector2f(0, randRange(100, 600))
-	//	: sf::Vector2f(1280, randRange(100, 600));
-
-	//waiting = true;
-	//soundPlayed = false;
-	//preAppear.restart();
 
 	this->restartTimer();
 
