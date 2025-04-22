@@ -44,6 +44,7 @@ void HealthyTarget::destroy()
 
 void HealthyTarget::appear()
 {
+	this->setHealth(2);
 	this->setPosition(sf::Vector2f(randRange(0, 1000), randRange(0, 500)));
 	this->playAppearEffect();
 	this->setIsDestryed(false);
