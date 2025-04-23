@@ -12,3 +12,4 @@ You are given a timer that is constantly counting down, and if it ever touches z
 targets by clicking on them to gain time on your timer. Faster targets get you more time. Shooting
 the cats removes time from the timer. Try to survive as long as you can!
 
+Tip: if you encounter linker errors hit "Rebuild Solution"
