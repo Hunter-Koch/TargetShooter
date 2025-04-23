@@ -5,9 +5,9 @@ CPT_S 122, Lecture Section 01, group assignment PA9. A shooting range style game
 
 
 Group members:
--Hunter Koch
+-Hunter Koch (Lab Section 2)
 -Alexis Maria (Lab Section 9)
--Reed Williams
+-Reed Williams (Lab Section 1)
 
 Basic Rules:
 You are given a timer that is constantly counting down, and if it ever touches zero you lose. Shoot
