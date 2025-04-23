@@ -20,6 +20,7 @@
 
 int main()
 {
+
     srand(time(NULL));
 
     runTestCases();
@@ -28,6 +29,9 @@ int main()
     sf::RenderWindow window(sf::VideoMode({ 1280, 720 }), "Target Shooter");
     
     
+
+   
+
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
